@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@layer base {
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* Variables para modo oscuro */
+      --color-bg: #000000;
+      --color-text: #ffffff;
+    }
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      /* Variables para modo claro */
+      --color-bg: #ffffff;
+      --color-text: #000000;
+    }
+  }
+}
