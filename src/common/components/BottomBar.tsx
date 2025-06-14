@@ -7,7 +7,7 @@ const navItems = [
   { href: "/", label: "Home", icon: Home },
   { href: "/projects", label: "Projects", icon: Wallet },
   { href: "/about", label: "About", icon: BarChart },
-  { href: "/settings", label: "Settings", icon: Settings },
+  
 ];
 
 export default function BottomBar() {
