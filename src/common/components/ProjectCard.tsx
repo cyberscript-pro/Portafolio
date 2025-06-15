@@ -13,19 +13,18 @@ type ProjectCardProps = {
 
 function ProjectCard({ ...project }: ProjectCardProps) {
   return (
-    <div
-      key={project.title}
-      className="relative rounded-xl overflow-hidden border border-gray-700 group"
-    >
+    <div className="w-full rounded-xl overflow-hidden border border-gray-700 bg-gray-900">
+      {/* Imagen */}
       <Image
         src={project.image}
         alt={project.title}
         width={600}
         height={400}
-        className="object-cover w-full h-60 transition-transform duration-500 group-hover:scale-105"
+        className="object-cover w-full h-60"
       />
 
-      <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-80 text-white p-4 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+      {/* Panel inferior con info */}
+      <div className="p-4 text-white">
         <h3 className="text-lg font-semibold mb-1">{project.title}</h3>
         <p className="text-sm text-gray-300 mb-3">{project.description}</p>
         <div className="flex gap-3">
