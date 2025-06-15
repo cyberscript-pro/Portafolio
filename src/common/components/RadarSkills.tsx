@@ -1,10 +1,16 @@
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer } from 'recharts';
 
 const data = [
-  {skill: 'Frontend', level: 75},
-  {skill: 'Backend', level: 90},
-  {skill: 'Bases de Datos', level: 70},
-  {skill: 'DevOps', level: 50},
+  {skill: 'React', level: 75},
+  {skill: 'TS', level: 90},
+  {skill: 'Java', level: 70},
+  {skill: 'Docker', level: 50},
+  {skill: 'Git', level: 70},
+  {skill: 'Node', level: 95},
+  {skill: 'Prisma', level: 80},
+  {skill: 'Express', level: 40},
+  {skill: 'Next.js', level: 90},
+  {skill: 'TailwindCSS', level: 80},
 ]
 
 function RadarSkills() {
@@ -13,8 +19,8 @@ function RadarSkills() {
       <ResponsiveContainer width='100%' height='100%'>
         <RadarChart cx='50%' cy='50%' outerRadius='80%' data={data}>
           <PolarGrid />
-          <PolarAngleAxis dataKey='skill'/>
-          <PolarRadiusAxis angle={30} domain={[0, 100]}/>
+          <PolarAngleAxis dataKey='skill' tick={{fontSize: 10}} />
+          <PolarRadiusAxis angle={50} domain={[0, 100]}/>
           <Radar name='Skill Level' dataKey='level' stroke='#8884d8' fill='#8884d8' fillOpacity={0.6}/>
         </RadarChart>
       </ResponsiveContainer>
