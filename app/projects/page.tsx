@@ -24,10 +24,12 @@ const projects = [
 //Plataforma en desarrollo para facilitar la contratacion de freelancers
 function ProjectScreen() {
   return (
-    <div>
-      <section className="py-16 px-6 bg-black text-white w-full min-h-screen">
-      <h2 className="text-3xl font-bold text-center mb-10">Proyectos</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="w-full min-h-screen bg-black pb-30">
+      <section className="py-16 px-6 text-white ">
+        <div className="sticky top-0 z-10 backdrop-blur-md">
+          <h2 className="text-3xl font-bold text-center p-10">Proyectos</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, idx) => (
             <ProjectCard
               key={idx}
