@@ -1,7 +1,6 @@
 "use client";
 import BottomBar from "@/src/common/components/BottomBar";
 import ProjectCard from "@/src/common/components/ProjectCard";
-import { title } from "process";
 import React from "react";
 
 const projects = [

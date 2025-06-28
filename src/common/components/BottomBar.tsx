@@ -1,12 +1,13 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { BarChart, Home, Settings, Wallet } from "lucide-react";
+import { Home, Settings, Wallet, LucidePersonStanding, LayoutDashboard } from "lucide-react";
+import { BsPersonCircle } from "react-icons/bs";
 
 const navItems = [
   { href: "/", label: "Home", icon: Home },
-  { href: "/projects", label: "Projects", icon: Wallet },
-  { href: "/about", label: "About", icon: BarChart },
+  { href: "/projects", label: "Projects", icon: LayoutDashboard },
+  { href: "/contact-me", label: "Contact Me", icon: BsPersonCircle },
   
 ];
 

@@ -5,7 +5,7 @@ import React from 'react'
 function AboutScreen() {
   return (
     <div>
-      <div>AboutScreen</div>
+      <div>Contact Screen</div>
       <BottomBar />
     </div>
   )
