@@ -21,7 +21,7 @@ const projects = [
     disabled: true,
   },
 ];
-//Plataforma en desarrollo para facilitar la contratacion de freelancers
+
 function ProjectScreen() {
   return (
     <div className="w-full min-h-screen bg-black pb-30">
