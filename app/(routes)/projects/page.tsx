@@ -1,5 +1,7 @@
 "use client";
 import BottomBar from "@/src/common/components/BottomBar";
+import Header from "@/src/common/components/Header";
+import { PageTransition } from "@/src/common/components/PageTransition";
 import ProjectCard from "@/src/common/components/ProjectCard";
 import React from "react";
 
@@ -24,7 +26,9 @@ const projects = [
 function ProjectScreen() {
   return (
     <div className="w-full min-h-screen bg-black pb-30">
-      <section className="py-16 px-6 text-white ">
+      <PageTransition />
+      <Header />
+      <section className="py-6 px-6 text-white ">
         <div className="sticky top-0 z-10 backdrop-blur-md">
           <h2 className="text-3xl font-bold text-center p-10">Proyectos</h2>
         </div>
@@ -43,7 +47,7 @@ function ProjectScreen() {
         </div>
       </section>
 
-      <BottomBar />
+      {/* <BottomBar /> */}
     </div>
   );
 }

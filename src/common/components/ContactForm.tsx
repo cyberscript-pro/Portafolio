@@ -1,33 +1,37 @@
-import { useForm } from 'react-hook-form';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import { useForm } from "react-hook-form";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPaperPlane } from "react-icons/fa";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 const contactSchema = z.object({
-  name: z.string().min(2, { message: 'El nombre debe tener al menos 2 caracteres' }),
-  email: z.string().email({ message: 'Email inválido' }),
-  message: z.string().min(10, { message: 'El mensaje debe tener al menos 10 caracteres' })
+  name: z
+    .string()
+    .min(2, { message: "El nombre debe tener al menos 2 caracteres" }),
+  email: z.string().email({ message: "Email inválido" }),
+  message: z
+    .string()
+    .min(10, { message: "El mensaje debe tener al menos 10 caracteres" }),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function ContactForm() {
-  const { 
-    register, 
-    handleSubmit, 
-    formState: { errors, isSubmitting } 
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema)
+    resolver: zodResolver(contactSchema),
   });
 
   const onSubmit = (data: ContactFormData) => {
     const telegramMessage = encodeURIComponent(
       `📨 Nuevo mensaje del portafolio\n\n` +
-      `👤 *Nombre:* ${data.name}\n` +
-      `✉️ *Email:* ${data.email}\n\n` +
-      `💬 *Mensaje:*\n${data.message}`
+        `👤 *Nombre:* ${data.name}\n` +
+        `✉️ *Email:* ${data.email}\n\n` +
+        `💬 *Mensaje:*\n${data.message}`
     );
-    
+
     window.location.href = `https://t.me/cyberscript_pro?start=${telegramMessage}`;
   };
 
@@ -38,139 +42,105 @@ export default function ContactForm() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
             Envíame un mensaje
           </h2>
-          
+
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-gray-300 mb-2 font-medium">
+              <label
+                htmlFor="name"
+                className="block text-gray-300 mb-2 font-medium"
+              >
                 Nombre
               </label>
               <input
                 id="name"
                 type="text"
                 className={`w-full px-4 py-3 bg-gray-700 border ${
-                  errors.name ? 'border-red-500' : 'border-gray-600'
+                  errors.name ? "border-red-500" : "border-gray-600"
                 } rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400`}
                 placeholder="Tu nombre"
-                {...register('name')}
+                {...register("name")}
               />
               {errors.name && (
-                <p className="mt-1 text-red-400 text-sm">{errors.name.message}</p>
+                <p className="mt-1 text-red-400 text-sm">
+                  {errors.name.message}
+                </p>
               )}
             </div>
-            
+
             <div>
-              <label htmlFor="email" className="block text-gray-300 mb-2 font-medium">
+              <label
+                htmlFor="email"
+                className="block text-gray-300 mb-2 font-medium"
+              >
                 Email
               </label>
               <input
                 id="email"
                 type="email"
                 className={`w-full px-4 py-3 bg-gray-700 border ${
-                  errors.email ? 'border-red-500' : 'border-gray-600'
+                  errors.email ? "border-red-500" : "border-gray-600"
                 } rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400`}
                 placeholder="tu@email.com"
-                {...register('email')}
+                {...register("email")}
               />
               {errors.email && (
-                <p className="mt-1 text-red-400 text-sm">{errors.email.message}</p>
+                <p className="mt-1 text-red-400 text-sm">
+                  {errors.email.message}
+                </p>
               )}
             </div>
-            
+
             <div>
-              <label htmlFor="message" className="block text-gray-300 mb-2 font-medium">
+              <label
+                htmlFor="message"
+                className="block text-gray-300 mb-2 font-medium"
+              >
                 Mensaje
               </label>
               <textarea
                 id="message"
                 rows={5}
                 className={`w-full px-4 py-3 bg-gray-700 border ${
-                  errors.message ? 'border-red-500' : 'border-gray-600'
+                  errors.message ? "border-red-500" : "border-gray-600"
                 } rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400`}
                 placeholder="Escribe tu mensaje aquí..."
-                {...register('message')}
+                {...register("message")}
               ></textarea>
               {errors.message && (
-                <p className="mt-1 text-red-400 text-sm">{errors.message.message}</p>
+                <p className="mt-1 text-red-400 text-sm">
+                  {errors.message.message}
+                </p>
               )}
             </div>
-            
+
             <button
               type="submit"
               disabled={isSubmitting}
               className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-6 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 shadow-lg shadow-purple-500/20 hover:shadow-purple-500/30"
             >
               <FaPaperPlane className="text-lg" />
-              {isSubmitting ? 'Enviando...' : 'Enviar por Telegram'}
+              {isSubmitting ? "Enviando..." : "Enviar por Telegram"}
             </button>
           </form>
         </div>
-        
-        <div>
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
-            Mis redes
-          </h2>
-          
-          <div className="space-y-6">
-            {/* GitHub */}
-            <a 
-              href="https://github.com/cyberscript-pro" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors group border border-gray-700"
+
+        {/* Información adicional */}
+        <div className="mt-10 p-6 bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl border border-cyan-800/50 backdrop-blur-sm">
+          <h3 className="font-medium text-lg text-cyan-200 mb-2 flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
             >
-              <div className="bg-gray-900 group-hover:bg-gray-800 p-3 rounded-lg transition-colors">
-                <FaGithub className="text-2xl text-gray-200" />
-              </div>
-              <div className="ml-4">
-                <h3 className="font-medium text-lg text-white">GitHub</h3>
-                <p className="text-gray-400 text-sm">github.com/cyberscript-pro</p>
-              </div>
-            </a>
-            
-            {/* LinkedIn */}
-            <a 
-              href="https://www.linkedin.com/in/li-anthony-fullstack/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors group border border-gray-700"
-            >
-              <div className="bg-blue-900/50 group-hover:bg-blue-900/70 p-3 rounded-lg transition-colors">
-                <FaLinkedin className="text-2xl text-blue-400" />
-              </div>
-              <div className="ml-4">
-                <h3 className="font-medium text-lg text-white">LinkedIn</h3>
-                <p className="text-gray-400 text-sm">linkedin.com/in/li-anthony-fullstack/</p>
-              </div>
-            </a>
-            
-            {/* Email */}
-            <a 
-              href="mailto:li.3108gomezgonzalez@gmail.com"
-              className="flex items-center p-4 bg-gray-800 rounded-xl hover:bg-gray-700 transition-colors group border border-gray-700"
-            >
-              <div className="bg-red-900/50 group-hover:bg-red-900/70 p-3 rounded-lg transition-colors">
-                <FaEnvelope className="text-2xl text-red-400" />
-              </div>
-              <div className="ml-4">
-                <h3 className="font-medium text-lg text-white">Email</h3>
-                <p className="text-gray-400 text-sm">li.3108gomezgonzalez@gmail.com</p>
-              </div>
-            </a>
-          </div>
-          
-          {/* Información adicional */}
-          <div className="mt-10 p-6 bg-gradient-to-br from-blue-900/50 to-cyan-900/50 rounded-xl border border-cyan-800/50 backdrop-blur-sm">
-            <h3 className="font-medium text-lg text-cyan-200 mb-2 flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-              </svg>
-              ¿Cómo funciona?
-            </h3>
-            <p className="text-cyan-100">
-              Al enviar el formulario se abrirá Telegram con tu mensaje prellenado.
-              Solo necesitas hacer clic en "Enviar" en la aplicación.
-            </p>
-          </div>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+            </svg>
+            ¿Cómo funciona?
+          </h3>
+          <p className="text-cyan-100">
+            Al enviar el formulario se abrirá Telegram con tu mensaje
+            prellenado. Solo necesitas hacer clic en "Enviar" en la aplicación.
+          </p>
         </div>
       </div>
     </section>

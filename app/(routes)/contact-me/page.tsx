@@ -1,13 +1,15 @@
 "use client";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import BottomBar from "@/src/common/components/BottomBar";
-import ContactCard from "@/src/common/components/ContactCard";
 import ContactForm from "@/src/common/components/ContactForm";
+import Header from "@/src/common/components/Header";
+import { PageTransition } from "@/src/common/components/PageTransition";
 
 export default function ContactScreen() {
   return (
-    <div>
-      <section className="py-12 px-4 max-w-4xl mx-auto">
+    <div className="w-full min-h-screen bg-black pb-30">
+      <PageTransition />
+      <Header />
+      <section className="py-16 px-6 text-white ">
         <h2 className="text-3xl font-bold text-center mb-8">Contáctame</h2>
 
         <ContactForm />
@@ -59,7 +61,7 @@ export default function ContactScreen() {
         {/* </div> */}
       </section>
 
-      <BottomBar />
+      {/* <BottomBar /> */}
     </div>
   );
 }

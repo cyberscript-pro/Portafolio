@@ -12,6 +12,8 @@ import BottomBar from "@/src/common/components/BottomBar";
 import SkillCard from "@/src/common/components/SkillCard";
 import ReadmeSection from "@/src/common/components/ReadmeSection";
 import RadarSkills from "@/src/common/components/RadarSkills";
+import { PageTransition } from "@/src/common/components/PageTransition";
+import HeroSection from "@/src/common/components/HeroSection";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -34,10 +36,12 @@ export default function Home() {
       className="h-screen relative pb-10 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/photo.png')" }}
     >
+      <PageTransition />
       <div className="absolute inset-0 bg-black/60 dark:bg-black/70 z-0" />
 
       <div className="absolute inset-0 z-10 overflow-auto">
-        <header className="flex justify-between items-center p-3 sticky top-0 backdrop-blur-xs z-50">
+        <HeroSection />
+        {/*<header className="flex justify-between items-center p-3 sticky top-0 backdrop-blur-xs z-50">
           <div className="flex gap-2 items-center">
             <Image
               src="/logo.png"
@@ -52,7 +56,7 @@ export default function Home() {
               Li Anthony Gomez
             </h3>
           </div>
-          {/* <ThemeToggle /> */}
+          
         </header>
         <main>
           <div className="max-w-3xl mx-auto md:px-8 px-2">
@@ -72,12 +76,11 @@ export default function Home() {
                 <SkillCard key={idx} skill={skill.name} icon={skill.icon} />
               ))}
             </div>
-            <RadarSkills />
           </section>
 
           <ReadmeSection />
-        </main>
-        <BottomBar />
+        </main>*/}
+        {/* <BottomBar /> */}
       </div>
     </div>
   );

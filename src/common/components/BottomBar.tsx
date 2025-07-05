@@ -1,44 +1,46 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Home, Settings, Wallet, LucidePersonStanding, LayoutDashboard } from "lucide-react";
+import { Home, LayoutDashboard } from "lucide-react";
 import { BsPersonCircle } from "react-icons/bs";
+import { MotionTransition } from "./MotionTransition";
 
 const navItems = [
   { href: "/", label: "Home", icon: Home },
   { href: "/projects", label: "Projects", icon: LayoutDashboard },
   { href: "/contact-me", label: "Contact Me", icon: BsPersonCircle },
-  
 ];
 
 export default function BottomBar() {
   const pathname = usePathname();
 
+  const isIncluded = pathname.search("portfolio");
+
   return (
-    <footer className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700 rounded-2xl w-[90%] max-w-md px-4 py-2 flex justify-between items-center backdrop-blur-md">
-      {navItems.map(({ href, label, icon: Icon }) => {
-        const isActive = pathname === href;
-        return (
-          <Link
-            key={href}
-            href={href}
-            className={`flex flex-col items-center justify-center text-sm font-medium transition-all duration-300 px-2 py-1 ${
-              isActive
-                ? "text-purple-600 dark:text-purple-400"
-                : "text-gray-500 dark:text-gray-400"
-            }`}
-          >
+    <MotionTransition
+      position="right"
+      className="fixed z-40 flex flex-col items-center justify-center w-full mt-auto h-max bottom-4"
+    >
+      {/*
+       className="fixed left-1/2 -translate-x-1/2 bg-white/15 shadow-lg border border-gray-200 dark:border-gray-700 rounded-4xl max-w-md px-4 flex gap-2 justify-between items-center backdrop-blur-md" */}
+      <nav>
+        <div className="flex items-center justify-center gap-2 px-4 py-1 rounded-full bg-white dark:bg-gray-900 shadow-lg border border-gray-200 dark:border-gray-700 background-blur-md">
+          {navItems.map(({ href, label, icon: Icon }) => (
             <div
-              className={`p-2 rounded-full transition ${
-                isActive ? "bg-purple-100 dark:bg-purple-900" : "bg-transparent"
+              key={label}
+              className={`px-3 py-2 transition duration-150 rounded-full cursor-pointer hover:bg-purple-900 ${
+                pathname == href ? "bg-purple-900" : ""
+              } ${
+                isIncluded == 1 && href == "/portfolio" ? "bg-purple-900" : ""
               }`}
             >
-              <Icon className="w-5 h-5" />
+              <Link href={href}>
+                <Icon className="w-6 h-6" />
+              </Link>
             </div>
-            <span className="text-xs mt-1">{label}</span>
-          </Link>
-        );
-      })}
-    </footer>
+          ))}
+        </div>
+      </nav>
+    </MotionTransition>
   );
 }
