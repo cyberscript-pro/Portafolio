@@ -1,3 +1,21 @@
+import { FaDocker, FaGitAlt, FaJava, FaReact } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io";
+import { SiExpo, SiTypescript } from "react-icons/si";
+import { RiNextjsFill, RiNodejsFill, RiTailwindCssFill } from "react-icons/ri";
+
+export const skills = [
+  { name: "JavaScript", icon: IoLogoJavascript },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "React", icon: FaReact },
+  { name: "NextJS", icon: RiNextjsFill },
+  { name: "TailwindCSS", icon: RiTailwindCssFill },
+  { name: "React Native with Expo", icon: SiExpo },
+  { name: "NodeJS", icon: RiNodejsFill },
+  { name: "Java", icon: FaJava },
+  { name: "Git", icon: FaGitAlt },
+  { name: "Docker", icon: FaDocker },
+];
+
 export const dataCounter = [
     {
         id: 0,

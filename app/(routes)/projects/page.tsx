@@ -28,10 +28,10 @@ function ProjectScreen() {
     <div className="w-full min-h-screen bg-black pb-30">
       <PageTransition />
       <Header />
-      <section className="py-6 px-6 text-white ">
-        <div className="sticky top-0 z-10 backdrop-blur-md">
+      <section className="pt-3 pb-6 px-6 text-white ">
+        {/* <div className="sticky top-0 z-10 backdrop-blur-md"> */}
           <h2 className="text-3xl font-bold text-center p-10">Proyectos</h2>
-        </div>
+        {/* </div> */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, idx) => (
             <ProjectCard

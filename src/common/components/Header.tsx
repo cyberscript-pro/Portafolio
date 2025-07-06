@@ -7,8 +7,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 function Header() {
   return (
-    <div>
-      <header className="flex items-center p-3 sticky top-0 backdrop-blur-xs z-50">
+      <header className="flex flex-col justify-center p-3 sticky top-0 backdrop-blur-sm z-50">
         <div className="flex gap-2 items-center">
           <Image
             src="/logo.png"
@@ -30,13 +29,13 @@ function Header() {
               wrapper="span"
               speed={30}
               repeat={Infinity}
-              className="font-bold text-white"
+              className="font-bold text-emerald-600"
             ></TypeAnimation>
           </h3>
         </div>
-      </header>
       <SocialContact />
-    </div>
+      </header>
+    
   );
 }
 
