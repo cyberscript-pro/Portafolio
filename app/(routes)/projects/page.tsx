@@ -3,25 +3,10 @@ import BottomBar from "@/src/common/components/BottomBar";
 import Header from "@/src/common/components/Header";
 import { PageTransition } from "@/src/common/components/PageTransition";
 import ProjectCard from "@/src/common/components/ProjectCard";
+import { projects } from "@/src/common/services/utils";
 import React from "react";
 
-const projects = [
-  {
-    title: "Gestión de Flota",
-    description: "",
-    image: "/flota.png",
-    demo: "https://az-flota.vercel.app",
-    repo: "https://github.com/cyberscript-pro/AzFlota",
-  },
-  {
-    title: "Plataforma de Contratación",
-    description: "",
-    image: "/development.png",
-    demo: "https://az-flota.vercel.app",
-    repo: "https://github.com/orgs/Guaraperos-SRL/",
-    disabled: true,
-  },
-];
+
 
 function ProjectScreen() {
   return (

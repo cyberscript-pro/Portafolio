@@ -6,7 +6,7 @@ function SocialContact() {
     <div>
       <div className=" flex justify-center items-center gap-2">
         <a
-          href="https://github.com/cyberscript-pro"
+          href="https://github.com/lianthonygg"
           target="_blank"
           rel="noopener noreferrer"
           className=""
@@ -17,7 +17,7 @@ function SocialContact() {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/li-anthony-fullstack/"
+          href="https://www.linkedin.com/in/lianthonygg"
           target="_blank"
           rel="noopener noreferrer"
           className=""
