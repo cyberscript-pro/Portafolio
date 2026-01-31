@@ -3,6 +3,7 @@ import BottomBar from "@/src/common/components/BottomBar";
 import Header from "@/src/common/components/Header";
 import { PageTransition } from "@/src/common/components/PageTransition";
 import ProjectCard from "@/src/common/components/ProjectCard";
+import { StackItem } from "@/src/common/components/TecnoStat";
 import { projects } from "@/src/common/services/utils";
 import React from "react";
 
@@ -27,6 +28,7 @@ function ProjectScreen() {
               demo={project.demo}
               repo={project.repo}
               disabled={project.disabled}
+              stack={project.stack as any as StackItem[]}
             />
           ))}
         </div>

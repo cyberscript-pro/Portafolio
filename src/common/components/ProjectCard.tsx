@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { StackItem, TecnoStat } from "./TecnoStat";
 
 type ProjectCardProps = {
   title: string;
@@ -9,6 +10,7 @@ type ProjectCardProps = {
   repo: string;
   disabled?: boolean;
   disabledRepo?: boolean;
+  stack: StackItem[];
 };
 
 function ProjectCard({ ...project }: ProjectCardProps) {
@@ -27,6 +29,7 @@ function ProjectCard({ ...project }: ProjectCardProps) {
       <div className="p-4 text-white">
         <h3 className="text-lg font-semibold mb-1">{project.title}</h3>
         <p className="text-sm text-gray-300 mb-3">{project.description}</p>
+        <TecnoStat items={project.stack} className="mb-3" />
         <div className="flex gap-3">
           <button
             onClick={() => {

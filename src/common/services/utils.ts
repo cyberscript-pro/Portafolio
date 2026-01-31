@@ -1,6 +1,13 @@
 import { FaDocker, FaGitAlt, FaJava, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { SiExpo, SiKotlin, SiTypescript } from "react-icons/si";
+import {
+  SiDart,
+  SiExpo,
+  SiKotlin,
+  SiPrisma,
+  SiSupabase,
+  SiTypescript,
+} from "react-icons/si";
 import { RiNextjsFill, RiNodejsFill, RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandCSharp } from "react-icons/tb";
 import { FaFlutter, FaGolang } from "react-icons/fa6";
@@ -95,6 +102,13 @@ export const projects = [
     image: "/angie-shop.avif",
     demo: "https://angie-shop.vercel.app",
     repo: "https://github.com/lianthonygg/AngieShop",
+    stack: [
+      { icon: RiNextjsFill, name: "Next.js" },
+      { icon: FaReact, name: "React" },
+      { icon: RiTailwindCssFill, name: "TailwindCSS" },
+      { icon: SiTypescript, name: "Typescript" },
+      { icon: SiSupabase, name: "Supabase" },
+    ],
   },
   {
     title: "MyBiz",
@@ -104,6 +118,10 @@ export const projects = [
     demo: "",
     repo: "https://github.com/lianthonygg/Finances-App",
     disabled: true,
+    stack: [
+      { icon: SiDart, name: "Dart" },
+      { icon: FaFlutter, name: "Flutter" },
+    ],
   },
   {
     title: "Gestión de Flota",
@@ -111,6 +129,13 @@ export const projects = [
     image: "/flota.avif",
     demo: "https://az-flota.vercel.app",
     repo: "https://github.com/lianthonygg/AzFlota",
+    stack: [
+      { icon: RiNextjsFill, name: "Next.js" },
+      { icon: FaReact, name: "React" },
+      { icon: RiTailwindCssFill, name: "TailwindCSS" },
+      { icon: SiTypescript, name: "Typescript" },
+      { icon: SiPrisma, name: "Prisma" },
+    ],
   },
   {
     title: "Plataforma de Contratación",
@@ -120,5 +145,11 @@ export const projects = [
     demo: "",
     repo: "https://github.com/orgs/Guaraperos-SRL/",
     disabled: true,
+    stack: [
+      { icon: SiExpo, name: "Expo" },
+      { icon: FaReact, name: "React Native" },
+      { icon: RiNextjsFill, name: "Next.js" },
+      { icon: TbBrandCSharp, name: "ASP.NET" },
+    ],
   },
 ];

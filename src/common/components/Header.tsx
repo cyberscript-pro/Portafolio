@@ -21,7 +21,7 @@ function Header() {
         >
           <TypeAnimation
             sequence={[
-              "Li Anthony Gomez",
+              "Li Anthony Gómez",
               2000,
               "Desarrollador FullStack",
               2000,
@@ -29,7 +29,7 @@ function Header() {
             wrapper="span"
             speed={30}
             repeat={Infinity}
-            className="font-bold text-emerald-600"
+            className="font-bold text-blue-400"
           ></TypeAnimation>
         </h3>
       </div>
