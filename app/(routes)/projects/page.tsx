@@ -5,9 +5,6 @@ import { PageTransition } from "@/src/common/components/PageTransition";
 import ProjectCard from "@/src/common/components/ProjectCard";
 import { StackItem } from "@/src/common/components/TecnoStat";
 import { projects } from "@/src/common/services/utils";
-import React from "react";
-
-
 
 function ProjectScreen() {
   return (
